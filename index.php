@@ -15,8 +15,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="content">
-
+	<main id="primary" class="container">
 		<?php
 		if ( have_posts() ) :
 
@@ -28,19 +27,42 @@ get_header();
 				<?php
 			endif;
 
+			?>
+			<div class="row gx-2 gy-3">
+				<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
-
 				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				* Include the Post-Type-specific template for the content.
+				* If you want to override this in a child theme, then include a file
+				* called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				*/
+				// get_template_part( 'template-parts/content', get_post_type() );
+				?>
+				<div class="col-6">
+					<div class="post__card">
+						<div class="post__thumbnail">
+							<?php ersy_post_thumbnail() ?>
+						</div>
+						<div class="post__card-body">
+							<div class="post__card-category">
+								<?php the_category( ' ' ); ?>
+							</div>
+							<?php
+								
+								the_title( '<h2 class="post__card--title">
+									<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+							?>
+						</div>
+					</div>
 
-			endwhile;
-
+				</div>
+				<?php 
+					endwhile;
+				?>
+			</div>
+			<?php 
 			the_posts_navigation();
 
 		else :
