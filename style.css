@@ -1,3 +1,10 @@
+.header__title {
+  margin: 0; }
+
+.header__description {
+  font-size: .85rem;
+  margin: 0; }
+
 .post__card-thumbnail--img {
   width: 300px;
   height: 150px;
