@@ -1,0 +1,13 @@
+.post__card{
+    &-thumbnail{
+        &--img{
+            width: 300px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: .45rem;
+        }
+    }
+    &--title{
+        font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    }
+}

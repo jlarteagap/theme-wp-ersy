@@ -1,22 +1,8 @@
-/*!
-Theme Name: ersy
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
-Version: 1.0.0
-Tested up to: 5.4
-Requires PHP: 5.6
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: ersy
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+.post__card-thumbnail--img {
+  width: 300px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: .45rem; }
 
-*/
-body{
-	background: peru;
-}
-
-.content{
-	background-color: paleturquoise;
-}
+.post__card--title {
+  font-size: calc(16px + 6 * ((100vw - 320px) / 680)); }
