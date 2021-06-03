@@ -43,11 +43,14 @@ get_header();
 				<div class="col-6">
 					<div class="post__card">
 						<div class="post__thumbnail">
-							
 							<?php ersy_post_thumbnail() ?>
 						</div>
 						<div class="post__card-body">
+							<div class="post__card-category">
+								<?php the_category( ' ' ); ?>
+							</div>
 							<?php
+								
 								the_title( '<h2 class="post__card--title">
 									<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 							?>
