@@ -1,0 +1,12 @@
+.footer{
+    background: var(--ersyBlue);
+    color: white;
+
+    & a{
+        color:white;
+
+        &:hover{
+            color: var(--ersyGreen);
+        }
+    }
+}

@@ -1,6 +1,22 @@
+:root{
+    --ersyRed: #ff1654;
+    --ersyYellow: #f3ffbd;
+    --ersyGreenLigth: #b2dbbf;
+    --ersyGreen: #70c1b3;
+    --ersyBlue: #247ba0;
+    --ersyDark: #50514f;
+}
+body{
+    color: var(--ersyDark);
+}
+a{
+    color: var(--ersyBlue);
+    text-decoration: none;
 
-body {
-
+    &:hover{
+        color: var(--ersyGreen)
+    }
 }
 @import 'header.scss';
 @import 'post.scss';
+@import 'footer.scss';

@@ -24,30 +24,31 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 
-	<header id="masthead" class="site-header">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  		<div class="container-fluid">
-			<?php
+	<header id="masthead" class="container-fluid header">
+	<nav class="navbar navbar-expand-lg header__nav">
+  		<div class="container">
+			<div class="navbar-brand header__logo">
+				<?php
 				the_custom_logo();
 				if ( is_front_page() && is_home() ) :
 					?>
-					<div class="navbar-brand header__logo">
 						<h1 class="header__title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 							<?php
 						else :
 							?>
-							<p class=""><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+							<h1 class="header__title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php
-				endif;
-				$ersy_description = get_bloginfo( 'description', 'display' );
-				if ( $ersy_description || is_customize_preview() ) :
-					?>
-					<p class="header__description"><?php echo $ersy_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-				<?php endif; ?>
-		</div>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-		</button>
+					endif;
+					$ersy_description = get_bloginfo( 'description', 'display' );
+					if ( $ersy_description || is_customize_preview() ) :
+						?>
+						<p class="header__description"><?php echo $ersy_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+						<?php endif; ?>
+					</div>
+					
+				<button class="navbar-toggler header__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon header__toggler--icon"></span>
+				</button>
 				<?php
 					wp_nav_menu(
 						array(
@@ -62,6 +63,8 @@
 							'walker'          => new WP_Bootstrap_Navwalker(),
 						)
 					);
-				?>	
+				?>
+
+			</div>
 	</nav>
 	</header><!-- #masthead -->

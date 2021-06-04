@@ -1,9 +1,39 @@
 .header{
+    background: var(--ersyRed);
+    color: white;
+
     &__title{
+        line-height: .95;
         margin: 0;
     }
     &__description{
+        color: white;
         font-size: .85rem;
+        font-weight: 700;
         margin: 0;
+    }
+    &__toggler{
+        border: 1px solid white;
+
+        &--icon{
+            background-image: url('./img/burguer.svg');
+        }
+        &:focus{
+            box-shadow: 0 0 3px rgba($color: #fff, $alpha: .5)
+        }
+        &:focus-visible{
+            box-shadow: 0 0 1rem rgba($color: #fff, $alpha: .5)
+        }
+    }
+    &__nav{
+        background: var(--ersyRed);
+    }
+
+    & a{
+        color: white;
+
+        &:hover{
+            color: var(--ersyYellow);
+        }
     }
 }

@@ -11,8 +11,8 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
+	<footer id="colophon" class="footer content-fluid">
+		<div class="container text-center">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ersy' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */

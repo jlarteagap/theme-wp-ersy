@@ -1,9 +1,45 @@
-.header__title {
-  margin: 0; }
+:root {
+  --ersyRed: #ff1654;
+  --ersyYellow: #f3ffbd;
+  --ersyGreenLigth: #b2dbbf;
+  --ersyGreen: #70c1b3;
+  --ersyBlue: #247ba0;
+  --ersyDark: #50514f; }
 
-.header__description {
-  font-size: .85rem;
-  margin: 0; }
+body {
+  color: var(--ersyDark); }
+
+a {
+  color: var(--ersyBlue);
+  text-decoration: none; }
+  a:hover {
+    color: var(--ersyGreen); }
+
+.header {
+  background: var(--ersyRed);
+  color: white; }
+  .header__title {
+    line-height: .95;
+    margin: 0; }
+  .header__description {
+    color: white;
+    font-size: .85rem;
+    font-weight: 700;
+    margin: 0; }
+  .header__toggler {
+    border: 1px solid white; }
+    .header__toggler--icon {
+      background-image: url("./img/burguer.svg"); }
+    .header__toggler:focus {
+      box-shadow: 0 0 3px rgba(255, 255, 255, 0.5); }
+    .header__toggler:focus-visible {
+      box-shadow: 0 0 1rem rgba(255, 255, 255, 0.5); }
+  .header__nav {
+    background: var(--ersyRed); }
+  .header a {
+    color: white; }
+    .header a:hover {
+      color: var(--ersyYellow); }
 
 .post__card-thumbnail--img {
   width: 300px;
@@ -13,3 +49,11 @@
 
 .post__card--title {
   font-size: calc(16px + 6 * ((100vw - 320px) / 680)); }
+
+.footer {
+  background: var(--ersyBlue);
+  color: white; }
+  .footer a {
+    color: white; }
+    .footer a:hover {
+      color: var(--ersyGreen); }
