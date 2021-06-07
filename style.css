@@ -41,14 +41,38 @@ a {
     .header a:hover {
       color: var(--ersyYellow); }
 
+.last__post {
+  background: red;
+  display: inline-block;
+  margin: 0px;
+  max-width: 810px;
+  padding-bottom: 25px;
+  position: sticky;
+  top: 0px; }
+
+.post__card-thumbnail--link {
+  display: block;
+  height: 150px;
+  width: 150px; }
+
 .post__card-thumbnail--img {
-  width: 300px;
+  border-radius: .45rem;
   height: 150px;
   object-fit: cover;
-  border-radius: .45rem; }
+  width: 150px; }
 
 .post__card--title {
   font-size: calc(16px + 6 * ((100vw - 320px) / 680)); }
+
+.post__card-category a {
+  color: var(--ersyRed);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .1rem; }
+
+@media screen and (max-width: 400px) {
+  .featured__section {
+    flex-wrap: wrap; } }
 
 .footer {
   background: var(--ersyBlue);

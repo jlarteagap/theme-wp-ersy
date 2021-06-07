@@ -18,7 +18,7 @@ get_header();
 	<main id="primary" class="container">
 		<?php
 		if ( have_posts() ) :
-
+			
 			if ( is_home() && ! is_front_page() ) :
 				?>
 				<header>
@@ -26,12 +26,16 @@ get_header();
 				</header>
 				<?php
 			endif;
-
+			
 			?>
-			<div class="row gx-2 gy-3">
-				<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
+			<div class="featured__section d-flex align-items-start">
+				<div class="last__post col-12 col-md-6">
+					Las post
+				</div>
+				<div class="row gx-2 gy-3">
+					<?php
+				/* Start the Loop */
+				while ( have_posts() ) :
 				the_post();
 				/*
 				* Include the Post-Type-specific template for the content.
@@ -40,27 +44,28 @@ get_header();
 				*/
 				// get_template_part( 'template-parts/content', get_post_type() );
 				?>
-				<div class="col-6">
-					<div class="post__card">
-						<div class="post__thumbnail">
+
+				<div class="col-6 col-md-12">
+					<div class="post__card d-block d-md-inline-flex">
+						<div class="post__thumbnail me-md-4">
 							<?php ersy_post_thumbnail() ?>
 						</div>
-						<div class="post__card-body">
+						<div class="post__card-body pe-md-5">
 							<div class="post__card-category">
 								<?php the_category( ' ' ); ?>
 							</div>
 							<?php
-								
 								the_title( '<h2 class="post__card--title">
-									<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-							?>
-						</div>
-					</div>
-
+												<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+												?>
+										</div>
+									</div>
+									
+								</div>
+								<?php 
+									endwhile;
+									?>
 				</div>
-				<?php 
-					endwhile;
-				?>
 			</div>
 			<?php 
 			the_posts_navigation();
