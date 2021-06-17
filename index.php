@@ -18,7 +18,7 @@ get_header();
 	<main id="primary" class="container">
 		<?php
 		if ( have_posts() ) :
-			
+			$first_post = true;
 			if ( is_home() && ! is_front_page() ) :
 				?>
 				<header>
@@ -28,43 +28,55 @@ get_header();
 			endif;
 			
 			?>
-			<div class="featured__section d-flex align-items-start">
-				<div class="last__post col-12 col-md-6">
-					Las post
-				</div>
-				<div class="row gx-2 gy-3">
+				<div class="featured__section d-flex align-items-start">
 					<?php
-				/* Start the Loop */
-				while ( have_posts() ) :
-				the_post();
-				/*
-				* Include the Post-Type-specific template for the content.
-				* If you want to override this in a child theme, then include a file
-				* called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				*/
-				// get_template_part( 'template-parts/content', get_post_type() );
-				?>
+					/* Start the Loop */
+					while ( have_posts() ) :
+					the_post();
+					/*
+					* Include the Post-Type-specific template for the content.
+					* If you want to override this in a child theme, then include a file
+					* called content-___.php (where ___ is the Post Type name) and that will be used instead.
+					*/
+					// get_template_part( 'template-parts/content', get_post_type() );
 
-				<div class="col-6 col-md-12">
-					<div class="post__card d-block d-md-inline-flex">
-						<div class="post__thumbnail me-md-4">
-							<?php ersy_post_thumbnail() ?>
-						</div>
-						<div class="post__card-body pe-md-5">
+					if ($first_post){ 
+						$first_post = false; 
+						?>
+						<div class="first__post col-12 col-md-6 p-0 pe-md-3">
+							<!-- first post thumbnail  -->
+							<?php ersy_firts_post_thumbnail('') ?>
 							<div class="post__card-category">
+								<!-- firts post category  -->
 								<?php the_category( ' ' ); ?>
 							</div>
+							<!-- first post title  -->
 							<?php
 								the_title( '<h2 class="post__card--title">
-												<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-												?>
+									<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+							?>
+						</div>	
+					<?php } else { ?>
+							<!-- <div class="row gx-3 gy-2"> -->
+								<div class="col-6 col-md-12">
+									<div class="post__card d-block d-md-inline-flex">
+										<div class="post__thumbnail me-md-4">
+											<?php ersy_post_thumbnail() ?>
+										</div>
+										<div class="post__card-body pe-md-5">
+											<div class="post__card-category">
+												<?php the_category( ' ' ); ?>
+											</div>
+											<?php
+												the_title( '<h2 class="post__card--title">
+													<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+											?>
 										</div>
 									</div>
-									
 								</div>
-								<?php 
-									endwhile;
-									?>
+							<!-- </div> -->
+					<?php }
+						endwhile; ?>
 				</div>
 			</div>
 			<?php 
