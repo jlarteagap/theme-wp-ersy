@@ -111,6 +111,33 @@ if ( ! function_exists( 'ersy_entry_footer' ) ) :
 		);
 	}
 endif;
+if ( !function_exists( 'ersy_firts_post_thumbnail' ) ):
+	/**
+	 * Displays firts post thumbnail on index.
+	 */
+	function ersy_firts_post_thumbnail(){
+		?>
+		<a class="first__post-thumbnail--link" href="<?php the_permalink(); ?>" aria-hidden="true">
+			<?php
+				if( has_post_thumbnail()){
+					the_post_thumbnail(
+						'large',
+						array(
+							'loading' => 'lazy',
+							'class' => 'post__card-firts-thumbnail--img img-fluid',
+							'alt' => the_title_attribute(
+								array(
+									'echo' => false,
+								)
+							),
+						)
+					);
+				}
+			?>
+		</a>
+	<?php }
+
+endif;
 
 if ( ! function_exists( 'ersy_post_thumbnail' ) ) :
 	/**
