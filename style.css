@@ -80,6 +80,13 @@ a {
   .featured__section {
     flex-wrap: wrap; } }
 
+.featured__posts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem; }
+  .featured__posts--top {
+    grid-row: 1 / 5; }
+
 .footer {
   background: var(--ersyBlue);
   color: white; }

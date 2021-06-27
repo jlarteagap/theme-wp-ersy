@@ -15,16 +15,23 @@
 get_header();
 ?>
 
-	<main id="primary" class="container">
+	<main id="primary" class="container my-5">
+
 		<?php
 		if ( have_posts() ) :
 			$first_post = true;
+<<<<<<< HEAD
+=======
+			$the_query = new WP_Query( 'posts_per_page=5' );
+
+>>>>>>> wpquery
 			if ( is_home() && ! is_front_page() ) :
 				?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
 				<?php
+<<<<<<< HEAD
 			endif;
 			
 			?>
@@ -57,6 +64,33 @@ get_header();
 							?>
 						</div>	
 					<?php } else { ?>
+=======
+			endif;?>
+
+			 <div class="featured__posts">
+				<?php 
+					while ($the_query -> have_posts()) : $the_query -> the_post(); 
+					
+					if ($first_post){ 
+						$first_post = false; 
+						?>
+						<div class="featured__posts--top">
+							<div class="first__post col-12 p-0 pe-md-3">
+								<!-- first post thumbnail  -->
+								<?php ersy_firts_post_thumbnail('') ?>
+								<div class="post__card-category">
+									<!-- firts post category  -->
+									<?php the_category( ' ' ); ?>
+								</div>
+								<!-- first post title  -->
+								<?php
+									the_title( '<h2 class="post__card--title">
+										<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+								?>
+							</div>
+						</div>	
+						<?php } else { ?>
+>>>>>>> wpquery
 							<!-- <div class="row gx-3 gy-2"> -->
 								<div class="col-6 col-md-12">
 									<div class="post__card d-block d-md-inline-flex">
@@ -75,6 +109,7 @@ get_header();
 									</div>
 								</div>
 							<!-- </div> -->
+<<<<<<< HEAD
 					<?php }
 						endwhile; ?>
 				</div>
@@ -83,7 +118,16 @@ get_header();
 			the_posts_navigation();
 
 		else :
+=======
+>>>>>>> wpquery
 
+					<?php }
+					// Repeat the process and reset once it hits the limit
+					endwhile;
+					wp_reset_postdata();
+					?>
+			</div>
+		<?php else :
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
@@ -92,5 +136,5 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
 get_footer();
