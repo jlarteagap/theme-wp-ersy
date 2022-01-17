@@ -85,7 +85,16 @@ get_header();
 		?>
 
 	</main><!-- #main -->
-
+	<!-- Close container-fluid  -->
+	</div>
+	<div class="top__post">
+		<div class="container py-5">
+			<h2 class="top__post-title m-0">
+				Featured post
+			</h2>
+			<p class="top__post-subtitle">Top of the week</p>
+		</div>
+	</div>
 <?php
 
 get_footer();

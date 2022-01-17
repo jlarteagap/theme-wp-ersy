@@ -85,7 +85,18 @@ a {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem; }
   .featured__posts--top {
-    grid-row: 1 / 5; }
+    grid-row: 1 / 9; }
+
+.top__post {
+  background: var(--ersyDark);
+  color: var(--ersyGreenLigth); }
+  .top__post-title {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: .85; }
+  .top__post-subtitle {
+    color: white; }
 
 .footer {
   background: var(--ersyBlue);
