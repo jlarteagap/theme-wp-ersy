@@ -111,33 +111,6 @@ if ( ! function_exists( 'ersy_entry_footer' ) ) :
 		);
 	}
 endif;
-if ( !function_exists( 'ersy_firts_post_thumbnail' ) ):
-	/**
-	 * Displays firts post thumbnail on index.
-	 */
-	function ersy_firts_post_thumbnail(){
-		?>
-		<a class="first__post-thumbnail--link" href="<?php the_permalink(); ?>" aria-hidden="true">
-			<?php
-				if( has_post_thumbnail()){
-					the_post_thumbnail(
-						'large',
-						array(
-							'loading' => 'lazy',
-							'class' => 'post__card-firts-thumbnail--img img-fluid',
-							'alt' => the_title_attribute(
-								array(
-									'echo' => false,
-								)
-							),
-						)
-					);
-				}
-			?>
-		</a>
-	<?php }
-
-endif;
 
 if ( ! function_exists( 'ersy_post_thumbnail' ) ) :
 	/**
@@ -147,39 +120,31 @@ if ( ! function_exists( 'ersy_post_thumbnail' ) ) :
 	 * element when on single views.
 	 */
 	function ersy_post_thumbnail() {
+		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+			return;
+		}
 
 		if ( is_singular() ) :
-			if ( has_post_thumbnail() ) {
-				the_post_thumbnail();
-			} else { ?>
-				<img src="<?php bloginfo('template_directory'); ?>/img/default-img.gif" class="img-fluid" />
-			<?php 
-			}
+			?>
 
-		else : ?>
-			<a class="post__card-thumbnail--link" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+			<div class="post-thumbnail">
+				<?php the_post_thumbnail(); ?>
+			</div><!-- .post-thumbnail -->
+
+		<?php else : ?>
+
+			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 				<?php
-					if( has_post_thumbnail()){
-						the_post_thumbnail(
-							'medium',
-							array(
-								'loading' => 'lazy',
-								'class' => 'post__card-thumbnail--img img-fluid',
-								'alt' => the_title_attribute(
-									array(
-										'echo' => false,
-									)
-								),
-							)
-						);
-					} else {
-						?> <img src="<?php bloginfo('template_directory'); ?>/img/default-img.gif" 
-							class="post__card-thumbnail--img img-fluid"
-							alt="<?php the_title(); ?>"
-						/>
-							
-						<?php
-					}
+					the_post_thumbnail(
+						'post-thumbnail',
+						array(
+							'alt' => the_title_attribute(
+								array(
+									'echo' => false,
+								)
+							),
+						)
+					);
 				?>
 			</a>
 

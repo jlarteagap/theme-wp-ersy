@@ -48,12 +48,10 @@ if ( ! function_exists( 'ersy_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'menu-1' => esc_html__( 'Primary', 'ersy' ),
-			)
-		);
-
+		register_nav_menus( array(
+			'primary' => __( 'Primary Menu', 'ersy' ),
+		) );
+		
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -94,8 +92,8 @@ if ( ! function_exists( 'ersy_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 250,
-				'width'       => 250,
+				'height'      => 112,
+				'width'       => 28,
 				'flex-width'  => true,
 				'flex-height' => true,
 			)
@@ -178,6 +176,4 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-
-// Walker
-require get_template_directory() . '/inc/navwalker.php';
+require get_template_directory() . '/inc/navwalwer.php';

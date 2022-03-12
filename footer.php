@@ -11,8 +11,8 @@
 
 ?>
 
-	<footer id="colophon" class="footer content-fluid">
-		<div class="container text-center">
+	<footer id="colophon" class="site-footer">
+		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ersy' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
@@ -28,7 +28,6 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <?php wp_footer(); ?>
 
 </body>

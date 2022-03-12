@@ -1,26 +1,31 @@
 :root{
-    --ersyRed: #ff1654;
-    --ersyYellow: #f3ffbd;
-    --ersyGreenLigth: #b2dbbf;
-    --ersyGreen: #70c1b3;
-    --ersyBlue: #247ba0;
-    --ersyDark: #50514f;
+    --ersy-dark: #000814;
+    --ersy-dark-blue: #001D3D;
 }
 
 $small: 400px;
-
+body, html {
+    margin: 0;
+    padding: 0;
+}
 body{
-    color: var(--ersyDark);
+    background-color: var(--ersy-dark);
+    color: var(--text-color);
 }
 a{
-    color: var(--ersyBlue);
+    color: var(--secondary-color);
     text-decoration: none;
 
     &:hover{
-        color: var(--ersyGreen)
+        color: var(--secondary-color-alt)
     }
 }
+img{
+    border-radius: .45rem
+}
+
 @import 'header.scss';
+@import 'featured_post.scss';
 @import 'post.scss';
 @import 'top.scss';
 @import 'footer.scss';

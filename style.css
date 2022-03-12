@@ -1,45 +1,67 @@
 :root {
-  --ersyRed: #ff1654;
-  --ersyYellow: #f3ffbd;
-  --ersyGreenLigth: #b2dbbf;
-  --ersyGreen: #70c1b3;
-  --ersyBlue: #247ba0;
-  --ersyDark: #50514f; }
+  --ersy-dark: #000814;
+  --ersy-dark-blue: #001D3D;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  color: var(--ersyDark); }
+  background-color: var(--ersy-dark);
+  color: var(--text-color);
+}
 
 a {
-  color: var(--ersyBlue);
-  text-decoration: none; }
-  a:hover {
-    color: var(--ersyGreen); }
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--secondary-color-alt);
+}
+
+img {
+  border-radius: 0.45rem;
+}
 
 .header {
-  background: var(--ersyRed);
-  color: white; }
-  .header__title {
-    line-height: .95;
-    margin: 0; }
-  .header__description {
-    color: white;
-    font-size: .85rem;
-    font-weight: 700;
-    margin: 0; }
-  .header__toggler {
-    border: 1px solid white; }
-    .header__toggler--icon {
-      background-image: url("./img/burguer.svg"); }
-    .header__toggler:focus {
-      box-shadow: 0 0 3px rgba(255, 255, 255, 0.5); }
-    .header__toggler:focus-visible {
-      box-shadow: 0 0 1rem rgba(255, 255, 255, 0.5); }
-  .header__nav {
-    background: var(--ersyRed); }
-  .header a {
-    color: white; }
-    .header a:hover {
-      color: var(--ersyYellow); }
+  color: white;
+}
+.header .navbar {
+  background: var(--ersy-dark-blue);
+}
+.header__title {
+  line-height: 0.95;
+  margin: 0;
+}
+.header__description {
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 0;
+}
+.header__toggler {
+  border: 1px solid white;
+}
+.header__toggler--icon {
+  background-image: url("./img/burguer.svg");
+}
+.header__toggler:focus {
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+}
+.header__toggler:focus-visible {
+  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
+}
+.header__nav {
+  background: var(--primary-color);
+}
+.header a {
+  color: white;
+}
+.header a:hover {
+  color: var(--ersyYellow);
+}
 
 .first__post {
   display: inline-block;
@@ -47,61 +69,81 @@ a {
   max-width: 810px;
   padding-bottom: 25px;
   position: sticky;
-  top: 0px; }
-  .first__post--thumbnail--link {
-    width: 100%;
-    height: auto; }
+  top: 0px;
+}
+.first__post--thumbnail--link {
+  width: 100%;
+  height: auto;
+}
 
 .post__card-thumbnail--link {
   display: block;
   height: 150px;
-  width: 150px; }
-
+  width: 150px;
+}
 .post__card-thumbnail--img {
-  border-radius: .45rem;
   height: 150px;
   object-fit: cover;
-  width: 150px; }
-
+  width: 150px;
+}
 .post__card--title {
-  font-size: calc(16px + 6 * ((100vw - 320px) / 680));
-  line-height: 1.3; }
-  .post__card--title a {
-    color: var(--ersyDark); }
-
+  font-size: calc(16px + 6 * (100vw - 320px) / 680);
+  line-height: 1.3;
+}
+.post__card--title a {
+  color: var(--ersyDark);
+}
 .post__card-category a {
   color: var(--ersyRed);
-  font-size: .70rem;
+  font-size: 0.7rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: .1rem; }
+  letter-spacing: 0.1rem;
+}
 
 @media screen and (max-width: 400px) {
   .featured__section {
-    flex-wrap: wrap; } }
+    flex-wrap: wrap;
+  }
+}
 
 .featured__posts {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem; }
-  .featured__posts--top {
-    grid-row: 1 / 9; }
+  grid-gap: 1rem;
+}
+.featured__posts--top {
+  grid-row: 1/9;
+}
+
+.post__top--thumbnail img {
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+  height: 500px;
+}
 
 .top__post {
   background: var(--ersyDark);
-  color: var(--ersyGreenLigth); }
-  .top__post-title {
-    font-size: 4rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    line-height: .85; }
-  .top__post-subtitle {
-    color: white; }
+  color: var(--ersyGreenLigth);
+}
+.top__post-title {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.85;
+}
+.top__post-subtitle {
+  color: white;
+}
 
 .footer {
   background: var(--ersyBlue);
-  color: white; }
-  .footer a {
-    color: white; }
-    .footer a:hover {
-      color: var(--ersyGreen); }
+  color: white;
+}
+.footer a {
+  color: white;
+}
+.footer a:hover {
+  color: var(--ersyGreen);
+}
